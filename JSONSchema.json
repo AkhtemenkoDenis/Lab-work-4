@@ -1,0 +1,123 @@
+@startjson
+{
+  "Користувач": {
+    "description": "Інформація про користувача системи",
+    "type": "object",
+    "properties": {
+      "ім'я": {
+        "description": "Ім'я користувача",
+        "type": "string"
+      },
+      "особистий_профіль": {
+        "description": "Особистий профіль користувача",
+        "type": "object",
+        "properties": {
+          "налаштування": {
+            "description": "Налаштування профілю",
+            "type": "string"
+          },
+          "обрані_ідеї": {
+            "description": "Список ідей, які обрані користувачем",
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "історія": {
+            "description": "Історія дій користувача",
+            "type": "string"
+          }
+        }
+      },
+      "отримані_консультації": {
+        "description": "Список отриманих консультацій",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "відповіді_фахівця": {
+              "description": "Відповіді, надані фахівцем",
+              "type": "string"
+            },
+            "онлайн_чат": {
+              "description": "Чат для консультації",
+              "type": "object",
+              "properties": {
+                "повідомлення": {
+                  "description": "Текст повідомлення",
+                  "type": "string"
+                },
+                "час_відправлення": {
+                  "description": "Час, коли було відправлено повідомлення",
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            },
+            "фахівець": {
+              "description": "Інформація про фахівця",
+              "type": "object",
+              "properties": {
+                "ім'я": {
+                  "description": "Ім'я фахівця",
+                  "type": "string"
+                },
+                "досвід": {
+                  "description": "Досвід фахівця",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ідеї": {
+        "description": "Список ідей, які переглядає користувач",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "назва": {
+              "description": "Назва ідеї",
+              "type": "string"
+            },
+            "опис": {
+              "description": "Опис ідеї",
+              "type": "string"
+            },
+            "тип": {
+              "description": "Тип ідеї",
+              "type": "string"
+            },
+            "категорія": {
+              "description": "Категорія ідеї",
+              "type": "object",
+              "properties": {
+                "назва": {
+                  "description": "Назва категорії",
+                  "type": "string"
+                },
+                "тип": {
+                  "description": "Тип категорії",
+                  "type": "string"
+                }
+              }
+            },
+            "поради": {
+              "description": "Список порад для цієї ідеї",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "рекомендація": {
+                    "description": "Рекомендація по поєднанню ідей",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@endjson
